@@ -1,0 +1,4 @@
+table=1x1
+memory=2000
+stack=0
+program=20

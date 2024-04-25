@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Compiler API</title>
+    <style type="text/css">
+      @import url("Coder_Doc.css");
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top_pane">
+        <h1 class="banner">API Documentation :: Compiler</h1>
+        <br />
+        <a href="Files.html">Files</a> :: Compiler API
+      </div>
+      <div class="left_pane">
+        <a href="#496E6974">Init</a><br />
+<a href="#50617273655F536F75726365">Parse_Source</a><br />
+<a href="#53706C6974">Split</a><br />
+<a href="#50617273655F546F6B656E73">Parse_Tokens</a><br />
+<a href="#50617273655F53746174656D656E7473">Parse_Statements</a><br />
+<a href="#50617273655F546F6B656E">Parse_Token</a><br />
+<a href="#50617273655F4B6579776F7264">Parse_Keyword</a><br />
+<a href="#47656E65726174655F50617273655F4572726F72">Generate_Parse_Error</a><br />
+<a href="#546578745F546F5F4E756D626572">Text_To_Number</a><br />
+<a href="#50617273655F435F4C6573685F537472696E67">Parse_C_Lesh_String</a><br />
+<a href="#57726974655F4E756D626572">Write_Number</a><br />
+<a href="#57726974655F435F4C6573685F537472696E67">Write_C_Lesh_String</a><br />
+<a href="#50617273655F5265666572656E6365">Parse_Reference</a><br />
+<a href="#50617273655F4E756D6265725F4F725F506C616365686F6C646572">Parse_Number_Or_Placeholder</a><br />
+<a href="#50617273655F4F626A6563745F5265666572656E6365">Parse_Object_Reference</a><br /><a href="#635461626C65">cTable</a><br />
+<a href="#635461626C65636F6E7374727563746F72">&nbsp;&nbsp;&rdsh;constructor</a><br />
+<a href="#635461626C654D6F76655F546F5F4E6578745F526F77">&nbsp;&nbsp;&rdsh;Move_To_Next_Row</a><br />
+<a href="#635461626C6557726974655F436F6C756D6E">&nbsp;&nbsp;&rdsh;Write_Column</a><br />
+<a href="#635461626C65526573697A65">&nbsp;&nbsp;&rdsh;Resize</a><br />
+<a href="#635461626C65526577696E64">&nbsp;&nbsp;&rdsh;Rewind</a><br />
+<a href="#635461626C654D6F76655F546F5F526F77">&nbsp;&nbsp;&rdsh;Move_To_Row</a><br />
+<a href="#635461626C654D6F76655F546F5F436F6C756D6E">&nbsp;&nbsp;&rdsh;Move_To_Column</a><br />
+<a href="#635461626C6553657269616C697A65">&nbsp;&nbsp;&rdsh;Serialize</a><br />
+      </div>
+      <div class="right_pane">
+        <h2>tokens</h2><br /><h2>symtab</h2><br /><h2>placeholders</h2><br /><h2>pcode</h2><br /><h2>root</h2><br /><a name="635461626C65"></a> <h1>cTable</h1><a name="635461626C65636F6E7374727563746F72"></a> <h2>constructor(width, height)</h2> <br />Creates a new table.<br /><span class="parameter">width</span> The width of the table.<br /><span class="parameter">height</span> The height of the table.<br /><br /><a name="635461626C654D6F76655F546F5F4E6578745F526F77"></a> <h2>Move_To_Next_Row()</h2> <br />Moves to the next row. Grows the table if needed.<br /><br /><a name="635461626C6557726974655F436F6C756D6E"></a> <h2>Write_Column(value)</h2> <br />Writes a value to a column.<br /><span class="parameter">value</span> The value to write.<br /><br /><a name="635461626C65526573697A65"></a> <h2>Resize(width, height)</h2> <br />Resizes the table to new dimensions.<br /><span class="parameter">width</span> The new width.<br /><span class="parameter">height</span> The new height.<br /><br /><a name="635461626C65526577696E64"></a> <h2>Rewind()</h2> <br />Resets the pointers so the first cell is pointed to.<br /><br /><a name="635461626C654D6F76655F546F5F526F77"></a> <h2>Move_To_Row(index)</h2> <br />Moves to a row.<br /><span class="parameter">index</span> The row index. <br /><span class="throws">throws</span> An error if the row is out of bounds.<br /><br /><a name="635461626C654D6F76655F546F5F436F6C756D6E"></a> <h2>Move_To_Column(index)</h2> <br />Moves to a specified column.<br /><span class="parameter">index</span> The column index.<br /><span class="throws">throws</span> An error if the column is out of bounds.<br /><br /><a name="635461626C6553657269616C697A65"></a> <h2>Serialize()</h2> <br />Returns a string representation of the table.<br /><br /><a name="496E6974"></a> <h1>Init()</h1><br />Initializes the compiler.<br /><br /><a name="50617273655F536F75726365"></a> <h1>Parse_Source(name)</h1><br />Parses a source file into tokens.<br /><span class="parameter">name</span> The name of the file.<br /><span class="throws">throws</span> An error if the source could not be parsed.<br /><br /><a name="53706C6974"></a> <h1>Split(data)</h1><br />Splits data into platform independent lines.<br /><span class="parameter">data</span> The data string to split.<br /><span class="return">returns</span> An array of lines without blanks.<br /><br /><a name="50617273655F546F6B656E73"></a> <h1>Parse_Tokens(line)</h1><br />Parses tokens from a line of text.<br /><span class="parameter">line</span> The line containing the tokens.<br /><span class="return">returns</span> An array of parsed tokens.<br /><br /><a name="50617273655F53746174656D656E7473"></a> <h1>Parse_Statements()</h1><br />Parses the statements in the code.<br /><br /><a name="50617273655F546F6B656E"></a> <h1>Parse_Token()</h1><br />Parses a token from the token stack.<br /><span class="throws">throws</span> An error if there are no more tokens.<br /><br /><a name="50617273655F4B6579776F7264"></a> <h1>Parse_Keyword(keyword)</h1><br />Parses a keyword.<br /><span class="parameter">keyword</span> The keyword to check for.<br /><span class="throws">throws</span> An error if the keyword is not there.<br /><br /><a name="47656E65726174655F50617273655F4572726F72"></a> <h1>Generate_Parse_Error(message, token)</h1><br />Generates a parse error.<br /><span class="parameter">message</span> The error message.<br /><span class="parameter">token</span> The token being parsed.<br /><span class="throws">throws</span> An error.<br /><br /><a name="546578745F546F5F4E756D626572"></a> <h1>Text_To_Number(text)</h1><br />Converts a text to a number.<br /><span class="parameter">text</span> The numeric text.<br /><span class="return">returns</span> A number.<br /><span class="throws">throws</span> An error if the number is not valid.<br /><br /><a name="50617273655F435F4C6573685F537472696E67"></a> <h1>Parse_C_Lesh_String()</h1><br />Parses a C-Lesh String.<br /><span class="throws">throws</span> An error if the string could not be parsed.<br /><br /><a name="57726974655F4E756D626572"></a> <h1>Write_Number(number)</h1><br /> Writes a pseudo code number.<br /><span class="parameter">number</span> The number to write to the code.<br /><br /><a name="57726974655F435F4C6573685F537472696E67"></a> <h1>Write_C_Lesh_String(text)</h1><br />Writes a C-Lesh string.<br /><span class="parameter">text</span> The text to write.<br /><br /><a name="50617273655F5265666572656E6365"></a> <h1>Parse_Reference(command)</h1><br />Parses a reference.<br /><span class="parameter">command</span> The command where the reference is.<br /><span class="throws">throws</span> An error if the reference is invalid.<br /><br /><a name="50617273655F4E756D6265725F4F725F506C616365686F6C646572"></a> <h1>Parse_Number_Or_Placeholder(text, command)</h1><br />Parses a number or placeholder from text.<br /><span class="parameter">text</span> The number or placeholder text.<br /><h1>parma command The command where to placeholder or number is.<br /><span class="return">returns</span> A number. It may be zero.<br /><br /><a name="50617273655F4F626A6563745F5265666572656E6365"></a> </h1>Parse_Object_Reference(text, command)@<br />Parses an object reference.<br /><span class="parameter">text</span> The text representing the address.<br /><span class="parameter">command</span> The associated command.<br /><span class="return">returns</span> A pair of numbers.<br /><span class="throws">throws</span> An error if the object reference is invalid.<br /><br />
+      </div>
+    </div>
+  </body>
+</html>
